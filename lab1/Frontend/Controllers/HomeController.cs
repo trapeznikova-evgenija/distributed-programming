@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Frontend.Models;
 using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace Frontend.Controllers
 {
@@ -23,10 +24,16 @@ namespace Frontend.Controllers
         }
 
         [HttpPost]
-        public IActionResult Upload(string data)
+        public async Task<IActionResult> Upload(string data)
         {
-            string id = null; 
-            //TODO: send data in POST request to backend and read returned id value from response
+            HttpClient restClient = new HttpClient();
+            
+            restClient.BaseAddress = new Uri("http://localhost:5000/");
+            restClient.DefaultRequestHeaders.Clear();
+            restClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            
+            HttpResponseMessage response = await restClient.PostAsJsonAsync("api/values", data);
+            string id = await response.Content.ReadAsStringAsync();
             return Ok(id);
         }
 
