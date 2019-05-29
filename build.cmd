@@ -4,6 +4,7 @@ set buildFolderDir=version_%version%
 
 set backendFolderName=Backend
 set frontendFolderName=Frontend
+set textListenerFolderName=TextListener
 
 if %1 == "" goto write_version
 if exist "%currentPath%\%backendFolderName%" goto build_exists
@@ -24,6 +25,7 @@ exit
   (
     echo start /d %frontendFolderName% dotnet %frontendFolderName%.dll
     echo start /d %backendFolderName% dotnet %backendFolderName%.dll 
+    echo start /d %textListenerFolderName% dotnet %textListenerFolderName%.dll 
   ) > "%buildFolderDir%/run.cmd"
 exit /b 0
 
@@ -36,4 +38,5 @@ exit /b 0
 :start_build
 dotnet build "src/%backendFolderName%" -o "../../%buildFolderDir%/%backendFolderName%"
 dotnet build "src/%frontendFolderName%" -o "../../%buildFolderDir%/%frontendFolderName%"
+dotnet build "src/%textListenerFolderName%" -o "../../%buildFolderDir%/%textListenerFolderName%"
 exit /b 0

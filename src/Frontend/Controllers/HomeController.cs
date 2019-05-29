@@ -33,6 +33,7 @@ namespace Frontend.Controllers
             restClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             
             HttpResponseMessage response = await restClient.PostAsJsonAsync("api/values", data);
+            Console.WriteLine(data);
             string id = await response.Content.ReadAsStringAsync();
             return Ok(id);
         }

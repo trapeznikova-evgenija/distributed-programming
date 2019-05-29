@@ -22,7 +22,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v2.2": {
-      "Frontend/3.2.8": {
+      "Frontend/0.0.1": {
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0"
@@ -3774,7 +3774,7 @@
     }
   },
   "libraries": {
-    "Frontend/3.2.8": {
+    "Frontend/0.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

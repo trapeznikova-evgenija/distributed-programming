@@ -1,0 +1,11 @@
+B:\study\distributed-programming\version_0.0.1\TextListener\TextListener.deps.json
+B:\study\distributed-programming\version_0.0.1\TextListener\TextListener.runtimeconfig.json
+B:\study\distributed-programming\version_0.0.1\TextListener\TextListener.runtimeconfig.dev.json
+B:\study\distributed-programming\version_0.0.1\TextListener\TextListener.dll
+B:\study\distributed-programming\version_0.0.1\TextListener\TextListener.pdb
+B:\study\distributed-programming\src\TextListener\obj\Debug\netcoreapp2.2\TextListener.csprojAssemblyReference.cache
+B:\study\distributed-programming\src\TextListener\obj\Debug\netcoreapp2.2\TextListener.csproj.CoreCompileInputs.cache
+B:\study\distributed-programming\src\TextListener\obj\Debug\netcoreapp2.2\TextListener.AssemblyInfoInputs.cache
+B:\study\distributed-programming\src\TextListener\obj\Debug\netcoreapp2.2\TextListener.AssemblyInfo.cs
+B:\study\distributed-programming\src\TextListener\obj\Debug\netcoreapp2.2\TextListener.dll
+B:\study\distributed-programming\src\TextListener\obj\Debug\netcoreapp2.2\TextListener.pdb
