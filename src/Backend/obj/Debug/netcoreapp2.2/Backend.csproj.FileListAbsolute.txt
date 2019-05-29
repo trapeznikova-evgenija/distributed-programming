@@ -26,3 +26,8 @@ B:\study\distributed-programming\src\Backend\obj\Debug\netcoreapp2.2\Backend.Ass
 B:\study\distributed-programming\src\Backend\obj\Debug\netcoreapp2.2\Backend.RazorTargetAssemblyInfo.cache
 B:\study\distributed-programming\src\Backend\obj\Debug\netcoreapp2.2\Backend.dll
 B:\study\distributed-programming\src\Backend\obj\Debug\netcoreapp2.2\Backend.pdb
+B:\study\distributed-programming\version_3.2.8\Backend\Backend.deps.json
+B:\study\distributed-programming\version_3.2.8\Backend\Backend.runtimeconfig.json
+B:\study\distributed-programming\version_3.2.8\Backend\Backend.runtimeconfig.dev.json
+B:\study\distributed-programming\version_3.2.8\Backend\Backend.dll
+B:\study\distributed-programming\version_3.2.8\Backend\Backend.pdb

@@ -54,3 +54,10 @@ B:\study\distributed-programming\src\Frontend\obj\Debug\netcoreapp2.2\Frontend.V
 B:\study\distributed-programming\src\Frontend\obj\Debug\netcoreapp2.2\Frontend.dll
 B:\study\distributed-programming\src\Frontend\obj\Debug\netcoreapp2.2\Frontend.pdb
 B:\study\distributed-programming\src\Frontend\obj\Debug\netcoreapp2.2\Frontend.csproj.CopyComplete
+B:\study\distributed-programming\version_3.2.8\Frontend\Frontend.deps.json
+B:\study\distributed-programming\version_3.2.8\Frontend\Frontend.runtimeconfig.json
+B:\study\distributed-programming\version_3.2.8\Frontend\Frontend.runtimeconfig.dev.json
+B:\study\distributed-programming\version_3.2.8\Frontend\Frontend.dll
+B:\study\distributed-programming\version_3.2.8\Frontend\Frontend.pdb
+B:\study\distributed-programming\version_3.2.8\Frontend\Frontend.Views.dll
+B:\study\distributed-programming\version_3.2.8\Frontend\Frontend.Views.pdb

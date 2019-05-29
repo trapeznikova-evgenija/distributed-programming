@@ -14218,7 +14218,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "3.2.8",
     "restore": {
       "projectUniqueName": "B:\\study\\distributed-programming\\src\\Frontend\\Frontend.csproj",
       "projectName": "Frontend",
