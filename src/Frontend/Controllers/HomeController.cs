@@ -30,17 +30,20 @@ namespace Frontend.Controllers
             
             restClient.BaseAddress = new Uri("http://localhost:5000/");
             restClient.DefaultRequestHeaders.Clear();
-            restClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            
-            HttpResponseMessage response = await restClient.PostAsJsonAsync("api/values", data);
-            Console.WriteLine(data);
+           
+            FormUrlEncodedContent content = new FormUrlEncodedContent(new[] {
+                new KeyValuePair<string, string>("value", data)
+            });
+
+            HttpResponseMessage response = await restClient.PostAsync("/api/values", content);
             string id = await response.Content.ReadAsStringAsync();
+
             return Ok(id);
         }
 
         public IActionResult Error()
         {
                 return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-            }
         }
     }
+}

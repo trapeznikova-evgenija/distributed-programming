@@ -46,3 +46,8 @@ B:\study\distributed-programming\version_0.0.3\Backend\Backend.runtimeconfig.jso
 B:\study\distributed-programming\version_0.0.3\Backend\Backend.runtimeconfig.dev.json
 B:\study\distributed-programming\version_0.0.3\Backend\Backend.dll
 B:\study\distributed-programming\version_0.0.3\Backend\Backend.pdb
+B:\study\distributed-programming\version_0.0.4\Backend\Backend.deps.json
+B:\study\distributed-programming\version_0.0.4\Backend\Backend.runtimeconfig.json
+B:\study\distributed-programming\version_0.0.4\Backend\Backend.runtimeconfig.dev.json
+B:\study\distributed-programming\version_0.0.4\Backend\Backend.dll
+B:\study\distributed-programming\version_0.0.4\Backend\Backend.pdb
