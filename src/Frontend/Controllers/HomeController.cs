@@ -23,6 +23,20 @@ namespace Frontend.Controllers
             return View();
         }
 
+        [HttpGet]
+        public async Task<IActionResult> TextDetails(string id)
+        {
+            HttpClient httpClient = new HttpClient();
+            HttpResponseMessage response = await httpClient.GetAsync("http://127.0.0.1:5000/api/values/" + id);
+
+            response.EnsureSuccessStatusCode();
+            string responseBody = await response.Content.ReadAsStringAsync();
+
+            ViewData["rank"] = responseBody;
+
+            return View();
+        }
+
         [HttpPost]
         public async Task<IActionResult> Upload(string data)
         {
@@ -38,7 +52,7 @@ namespace Frontend.Controllers
             HttpResponseMessage response = await restClient.PostAsync("/api/values", content);
             string id = await response.Content.ReadAsStringAsync();
 
-            return Ok(id);
+            return new RedirectResult("http://localhost:5001/Home/TextDetails/" + id);
         }
 
         public IActionResult Error()

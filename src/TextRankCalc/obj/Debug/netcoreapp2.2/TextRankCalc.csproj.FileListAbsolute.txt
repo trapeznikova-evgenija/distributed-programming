@@ -1,0 +1,16 @@
+B:\study\distributed-programming\src\TextRankCalc\obj\Debug\netcoreapp2.2\TextRankCalc.csprojAssemblyReference.cache
+B:\study\distributed-programming\src\TextRankCalc\obj\Debug\netcoreapp2.2\TextRankCalc.csproj.CoreCompileInputs.cache
+B:\study\distributed-programming\src\TextRankCalc\obj\Debug\netcoreapp2.2\TextRankCalc.AssemblyInfoInputs.cache
+B:\study\distributed-programming\src\TextRankCalc\obj\Debug\netcoreapp2.2\TextRankCalc.AssemblyInfo.cs
+B:\study\distributed-programming\version_0.0.1\TextRankCalc\TextRankCalc.deps.json
+B:\study\distributed-programming\version_0.0.1\TextRankCalc\TextRankCalc.runtimeconfig.json
+B:\study\distributed-programming\version_0.0.1\TextRankCalc\TextRankCalc.runtimeconfig.dev.json
+B:\study\distributed-programming\version_0.0.1\TextRankCalc\TextRankCalc.dll
+B:\study\distributed-programming\version_0.0.1\TextRankCalc\TextRankCalc.pdb
+B:\study\distributed-programming\src\TextRankCalc\obj\Debug\netcoreapp2.2\TextRankCalc.dll
+B:\study\distributed-programming\src\TextRankCalc\obj\Debug\netcoreapp2.2\TextRankCalc.pdb
+B:\study\distributed-programming\version_0.0.3\TextRankCalc\TextRankCalc.deps.json
+B:\study\distributed-programming\version_0.0.3\TextRankCalc\TextRankCalc.runtimeconfig.json
+B:\study\distributed-programming\version_0.0.3\TextRankCalc\TextRankCalc.runtimeconfig.dev.json
+B:\study\distributed-programming\version_0.0.3\TextRankCalc\TextRankCalc.dll
+B:\study\distributed-programming\version_0.0.3\TextRankCalc\TextRankCalc.pdb

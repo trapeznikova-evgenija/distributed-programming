@@ -23,7 +23,14 @@ namespace Backend.Controllers
         {
             string value = null;
             _data.TryGetValue(id, out value);
-            return value;
+
+            string currentId = (string)id;
+            var valueInfo = tempDb.StringGet("Rank_" + currentId);
+            
+            Console.WriteLine("rank: " + valueInfo);
+            Console.WriteLine("rankId: " + "Rank_" + currentId);
+
+            return valueInfo;
         }
 
         // POST api/values
@@ -33,7 +40,10 @@ namespace Backend.Controllers
             var id = Guid.NewGuid().ToString();
             _data[id] = value;
             tempDb.StringSet(id, value);
+
             subscriber.Publish("events", id);
+            subscriber.Publish("TextCreated", id);
+
             return id;
         }
     }

@@ -1258,11 +1258,11 @@
   "project": {
     "version": "0.0.3",
     "restore": {
-      "projectUniqueName": "B:\\study\\distributed-programming\\src\\TextListener\\TextListener.csproj",
-      "projectName": "TextListener",
-      "projectPath": "B:\\study\\distributed-programming\\src\\TextListener\\TextListener.csproj",
+      "projectUniqueName": "B:\\study\\distributed-programming\\src\\TextRankCalc\\TextRankCalc.csproj",
+      "projectName": "TextRankCalc",
+      "projectPath": "B:\\study\\distributed-programming\\src\\TextRankCalc\\TextRankCalc.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "B:\\study\\distributed-programming\\src\\TextListener\\obj\\",
+      "outputPath": "B:\\study\\distributed-programming\\src\\TextRankCalc\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
