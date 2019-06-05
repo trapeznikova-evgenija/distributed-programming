@@ -23,9 +23,9 @@ exit
 
 :create_run_script
   (
-    echo start /d %frontendFolderName% dotnet %frontendFolderName%.dll
-    echo start /d %backendFolderName% dotnet %backendFolderName%.dll 
-    echo start /d %textListenerFolderName% dotnet %textListenerFolderName%.dll 
+    echo start "%frontendFolderName%" /d %frontendFolderName% dotnet %frontendFolderName%.dll
+    echo start "%backendFolderName%" /d %backendFolderName% dotnet %backendFolderName%.dll 
+    echo start "%textListenerFolderName%" /d %textListenerFolderName% dotnet %textListenerFolderName%.dll 
   ) > "%buildFolderDir%/run.cmd"
 exit /b 0
 
