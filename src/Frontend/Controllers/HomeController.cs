@@ -32,7 +32,7 @@ namespace Frontend.Controllers
             response.EnsureSuccessStatusCode();
             string responseBody = await response.Content.ReadAsStringAsync();
 
-            ViewData["rank"] = responseBody;
+            ViewData["TextDetails"] = responseBody;
 
             return View();
         }

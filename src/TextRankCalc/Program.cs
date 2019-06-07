@@ -13,13 +13,13 @@ namespace TextRankCalc
 
         static void Main(string[] args)
         {
-            subscriber.Subscribe("TextCreated", (channel, message) => {
+            subscriber.Subscribe("events", (channel, message) => {
                 string value = tempDb.StringGet((string)message);
                 int vowelsAmount = Regex.Matches(value, @"[aeiouy]", RegexOptions.IgnoreCase).Count;
                 int consonantsAmount = Regex.Matches(value, @"[bcdfghjklmnpqrstvwxz]", RegexOptions.IgnoreCase).Count;
 
                 double rank = (double)vowelsAmount / consonantsAmount;
-                string id = "Rank_" + (string)message;
+                string id = "rank_" + (string)message;
                 tempDb.StringSet(id, rank);
               
                 Console.WriteLine("id: " + id);

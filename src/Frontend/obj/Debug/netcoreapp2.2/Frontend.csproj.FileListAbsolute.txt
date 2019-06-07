@@ -89,3 +89,4 @@ B:\study\distributed-programming\version_0.0.4\Frontend\Frontend.dll
 B:\study\distributed-programming\version_0.0.4\Frontend\Frontend.pdb
 B:\study\distributed-programming\version_0.0.4\Frontend\Frontend.Views.dll
 B:\study\distributed-programming\version_0.0.4\Frontend\Frontend.Views.pdb
+B:\study\distributed-programming\src\Frontend\obj\Debug\netcoreapp2.2\Razor\Views\Home\TextDetails.g.cshtml.cs

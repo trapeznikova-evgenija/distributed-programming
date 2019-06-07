@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Concurrent;
 using StackExchange.Redis;
 using System.Configuration;
+using System.Threading;
 
 namespace Backend.Controllers
 {
@@ -25,10 +26,27 @@ namespace Backend.Controllers
             _data.TryGetValue(id, out value);
 
             string currentId = (string)id;
-            var valueInfo = tempDb.StringGet("Rank_" + currentId);
+            var valueInfo = "";
+            valueInfo = tempDb.StringGet("rank_" + currentId);
             
+            if (valueInfo == "")
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    valueInfo = tempDb.StringGet("rank_" + currentId);
+                    
+                    if (valueInfo == "")
+                    {
+                        Thread.Sleep(300);
+                    } else
+                    {
+                        break;
+                    }
+                }    
+            }
+
             Console.WriteLine("rank: " + valueInfo);
-            Console.WriteLine("rankId: " + "Rank_" + currentId);
+            Console.WriteLine("rankId: " + "rank_" + currentId);
 
             return valueInfo;
         }
@@ -42,7 +60,6 @@ namespace Backend.Controllers
             tempDb.StringSet(id, value);
 
             subscriber.Publish("events", id);
-            subscriber.Publish("TextCreated", id);
 
             return id;
         }
