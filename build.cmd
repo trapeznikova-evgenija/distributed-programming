@@ -6,11 +6,17 @@ set backendFolderName=Backend
 set frontendFolderName=Frontend
 set textListenerFolderName=TextListener
 set textRankCalcFolderName=TextRankCalc
+set vowelConsCounterFolderName=VowelConsCounter
+set vowelConsRaterFolderName=VowelConsRater
+
 
 if %1 == "" goto write_version
 if exist "%currentPath%\%backendFolderName%" goto build_exists
 mkdir "%buildFolderDir%"
-call :create_run_script
+
+copy "run.cmd" %currentPath%\%buildFolderDir%
+copy "config.txt" %currentPath%\%buildFolderDir%
+
 call :create_stop_script
 call :start_build
 
@@ -20,16 +26,7 @@ exit
 
 :build_exists
 echo %version% folder already exist
-exit
-
-:create_run_script
-  (
-    echo start "%frontendFolderName%" /d %frontendFolderName% dotnet %frontendFolderName%.dll
-    echo start "%backendFolderName%" /d %backendFolderName% dotnet %backendFolderName%.dll 
-    echo start "%textListenerFolderName%" /d %textListenerFolderName% dotnet %textListenerFolderName%.dll 
-    echo start "%textRankCalcFolderName%" /d %textRankCalcFolderName% dotnet %textRankCalcFolderName%.dll 
-  ) > "%buildFolderDir%/run.cmd"
-exit /b 0
+exit                             
 
 :create_stop_script
   (
@@ -42,4 +39,10 @@ dotnet build "src/%backendFolderName%" -o "../../%buildFolderDir%/%backendFolder
 dotnet build "src/%frontendFolderName%" -o "../../%buildFolderDir%/%frontendFolderName%"
 dotnet build "src/%textListenerFolderName%" -o "../../%buildFolderDir%/%textListenerFolderName%"
 dotnet build "src/%textRankCalcFolderName%" -o "../../%buildFolderDir%/%textRankCalcFolderName%"
+dotnet build "src/%vowelConsCounterFolderName%" -o "../../%buildFolderDir%/%vowelConsCounterFolderName%"
+dotnet build "src/%vowelConsRaterFolderName%" -o "../../%buildFolderDir%/%vowelConsRaterFolderName%"
 exit /b 0
+
+:run_file_not_exist
+echo run file not exitst in directory "%currentPath%\run.cmd"
+exit

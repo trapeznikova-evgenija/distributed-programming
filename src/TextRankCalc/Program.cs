@@ -21,12 +21,12 @@ namespace TextRankCalc
                 string value = tempDb.StringGet((string)message);
                 SendMessage((string)message, tempDb);
               
-                Console.WriteLine((string)message);
+                Console.WriteLine("Send message CalculateVowelConsJob " + (string)message);
             });
 
             Console.ReadLine(); 
         }
-         private static void SendMessage(string message, IDatabase tempDb)
+        private static void SendMessage(string message, IDatabase tempDb)
         {
             tempDb.ListLeftPush(QUEUE_NAME, message, flags: CommandFlags.FireAndForget);
             tempDb.Multiplexer.GetSubscriber().Publish(TASK_NAME, "");

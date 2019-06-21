@@ -1,4 +1,6 @@
 ﻿using System;
+using StackExchange.Redis;
+using System.Collections.Generic;
 
 namespace VowelConsRater
 {
@@ -15,8 +17,30 @@ namespace VowelConsRater
         {
            subscriber.Subscribe(RATE_TASK_NAME, delegate
            {
+               string message = tempDb.ListRightPop(RATE_QUEUE_NAME);
                
+               while (message != null)
+               {
+                    string[] messageSplitArray = message.Split('/');
+
+                    string contextId = messageSplitArray[0];
+                    int vowelsAmount = Convert.ToInt16(messageSplitArray[1]);
+                    int consonantsAmount = Convert.ToInt16(messageSplitArray[2]);
+
+                    double rank = (double)vowelsAmount / consonantsAmount;
+                    string id = "rank_" + (string)contextId;
+                    tempDb.StringSet(id, rank);
+                    var dataValue = tempDb.StringGet(id);
+                    Console.WriteLine($"{dataValue}");
+
+                    Console.WriteLine($"{id} : {rank}");
+
+                    message = tempDb.ListRightPop(RATE_QUEUE_NAME);
+                    subscriber.Publish("events", $"{id} : {rank}");
+               }
            });
-        }
+
+            Console.ReadLine(); 
+        }       
     }
 }

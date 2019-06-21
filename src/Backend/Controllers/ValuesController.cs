@@ -26,18 +26,18 @@ namespace Backend.Controllers
             _data.TryGetValue(id, out value);
 
             string currentId = (string)id;
-            var valueInfo = "";
+            string valueInfo = null;
             valueInfo = tempDb.StringGet("rank_" + currentId);
             
-            if (valueInfo == "")
+            if (valueInfo == null)
             {
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < 50; i++)
                 {
                     valueInfo = tempDb.StringGet("rank_" + currentId);
                     
-                    if (valueInfo == "")
+                    if (valueInfo == null)
                     {
-                        Thread.Sleep(300);
+                        Thread.Sleep(500);
                     } else
                     {
                         break;
