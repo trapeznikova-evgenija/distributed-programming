@@ -1256,7 +1256,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "0.0.12",
+    "version": "0.0.2",
     "restore": {
       "projectUniqueName": "B:\\study\\distributed-programming\\src\\TextListener\\TextListener.csproj",
       "projectName": "TextListener",

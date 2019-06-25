@@ -37,7 +37,7 @@ namespace VowelConsCounter
 
            Console.ReadLine(); 
         }
-         private static void SendMessage(IDatabase tempDb, string vowelNumConsNum)
+        private static void SendMessage(IDatabase tempDb, string vowelNumConsNum)
         {
             tempDb.ListLeftPush(VOWEL_RATER_JOBS_QUEUE, vowelNumConsNum, flags: CommandFlags.FireAndForget);
             tempDb.Multiplexer.GetSubscriber().Publish(RATE_VOWEL_CONS_JOB_TASK_NAME, "");
