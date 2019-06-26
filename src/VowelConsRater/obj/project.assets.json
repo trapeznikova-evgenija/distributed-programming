@@ -387,6 +387,19 @@
         "runtime": {
           "lib/netcoreapp2.1/System.Threading.Channels.dll": {}
         }
+      },
+      "RedisService/0.0.3": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "StackExchange.Redis": "2.0.545"
+        },
+        "compile": {
+          "bin/placeholder/RedisService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RedisService.dll": {}
+        }
       }
     }
   },
@@ -1204,11 +1217,17 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "RedisService/0.0.3": {
+      "type": "project",
+      "path": "../WebLib/Service/RedisService/RedisService.csproj",
+      "msbuildProject": "../WebLib/Service/RedisService/RedisService.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "Microsoft.NETCore.App >= 2.2.0",
+      "RedisService >= 0.0.3",
       "StackExchange.Redis >= 2.0.545"
     ]
   },
@@ -1239,7 +1258,11 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "B:\\study\\distributed-programming\\src\\WebLib\\Service\\RedisService\\RedisService.csproj": {
+              "projectPath": "B:\\study\\distributed-programming\\src\\WebLib\\Service\\RedisService\\RedisService.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

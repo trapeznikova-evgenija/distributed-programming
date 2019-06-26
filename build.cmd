@@ -9,6 +9,7 @@ set textRankCalcFolderName=TextRankCalc
 set vowelConsCounterFolderName=VowelConsCounter
 set vowelConsRaterFolderName=VowelConsRater
 set TextStatisticsFolderName=TextStatistics
+set TextProcessingLimiterFolderName=TextProcessingLimiter
 
 
 if %1 == "" goto write_version
@@ -17,6 +18,9 @@ mkdir "%buildFolderDir%"
 
 copy "run.cmd" %currentPath%\%buildFolderDir%
 copy "config.txt" %currentPath%\%buildFolderDir%
+
+mkdir "%currentPath%/%buildFolderDir%/TextProcessingLimiter/configs"
+copy "%currentPath%\Configs\TextProcessingLimiter\application.properties" "%currentPath%\%buildFolderDir%\TextProcessingLimiter\configs\"
 
 call :create_stop_script
 call :start_build
@@ -43,6 +47,7 @@ dotnet build "src/%textRankCalcFolderName%" -o "../../%buildFolderDir%/%textRank
 dotnet build "src/%vowelConsCounterFolderName%" -o "../../%buildFolderDir%/%vowelConsCounterFolderName%"
 dotnet build "src/%vowelConsRaterFolderName%" -o "../../%buildFolderDir%/%vowelConsRaterFolderName%"
 dotnet build "src/%TextStatisticsFolderName%" -o "../../%buildFolderDir%/%TextStatisticsFolderName%"
+dotnet build "src/%TextProcessingLimiterFolderName%" -o "../../%buildFolderDir%/%TextProcessingLimiterFolderName%"
 exit /b 0
 
 :run_file_not_exist

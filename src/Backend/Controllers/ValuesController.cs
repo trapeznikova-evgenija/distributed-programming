@@ -31,7 +31,7 @@ namespace Backend.Controllers
         public string Get(string id)
         {
             string value = null;
-            _redisService.GetDataFromDb((int) _redisService.GetDbNumberById(id), id);
+            _redisService.GetDataFromDb((int)_redisService.GetDbNumberById(id), id);
             return value;
         }
 
@@ -41,12 +41,12 @@ namespace Backend.Controllers
         {
             var id = Guid.NewGuid().ToString();
             _redisService.SetDataToDb(0, new RedisData(id, _redisHelper.GetDbNumberByRegionKind(value.RegionKind).ToString()));
-            _redisService.SetDataToDb((int) _redisHelper.GetDbNumberByRegionKind(value.RegionKind), new RedisData(id, value.Value));
-            _redisService.SendMessage((int) _redisHelper.GetDbNumberByRegionKind(value.RegionKind), "events", new RedisData()
+            _redisService.SetDataToDb((int)_redisHelper.GetDbNumberByRegionKind(value.RegionKind), new RedisData(id, value.Value));
+            _redisService.SendMessage((int)_redisHelper.GetDbNumberByRegionKind(value.RegionKind), "events", new RedisData()
             {
                 Id = id,
                 Value = value.Value
-            });
+            }, "TextCreated");
             return id;
         }
 
@@ -55,18 +55,27 @@ namespace Backend.Controllers
         public string CalculateTextRank([FromBody]string id)
         {
             string rank = null;
-            for (int i = 0; i < 5; i++)
+            string limitStatus = _redisService.GetValueById(0, $"LimitIsExceeded");
+            if (limitStatus != "false")
             {
-                rank = _redisService.GetValueById((int) _redisService.GetDbNumberById(id), $"rank_{id}");
-                if (rank != null)
+                for (int i = 0; i < 10; i++)
                 {
-                    break;
-                }
-                else
-                {
-                    Thread.Sleep(500);
+                    rank = _redisService.GetValueById((int)_redisService.GetDbNumberById(id), $"rank_{id}");
+                    if (rank != null)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Thread.Sleep(500);
+                    }
                 }
             }
+            else
+            {
+                return "limitIsOver";
+            }
+
             return rank;
         }
 
@@ -78,7 +87,8 @@ namespace Backend.Controllers
             {
                 textNum = _redisService.GetDataFromDb(0, "textNum_"),
                 highRankPart = _redisService.GetDataFromDb(0, "highRankPart_"),
-                avgRank = _redisService.GetDataFromDb(0, "avgRankPrefix_")
+                avgRank = _redisService.GetDataFromDb(0, "avgRankPrefix_"),
+                declineRankQuantity = _redisService.GetDataFromDb(0, "declineRankQuantityPrefix_") ?? 0.ToString()
             };
         }
     }

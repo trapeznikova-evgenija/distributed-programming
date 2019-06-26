@@ -61,7 +61,7 @@ namespace Frontend.Controllers
                 return View("TextDetails", rank);
             }
 
-            return View("Error", "Ошибка ввода данных");
+            return View("Error", rank ?? "Ошибка ввода данных");
         }
 
         public IActionResult Error()

@@ -53,6 +53,17 @@ E:\GITHUB\DistributedProgramming\lab7\TextListener\obj\Debug\netcoreapp2.2\TextL
 E:\GITHUB\DistributedProgramming\lab7\TextListener\obj\Debug\netcoreapp2.2\TextListener.AssemblyInfo.cs
 E:\GITHUB\DistributedProgramming\lab7\TextListener\obj\Debug\netcoreapp2.2\TextListener.dll
 E:\GITHUB\DistributedProgramming\lab7\TextListener\obj\Debug\netcoreapp2.2\TextListener.pdb
+E:\GITHUB\DistributedProgramming\lab8\TextListener\bin\Debug\netcoreapp2.2\TextListener.deps.json
+E:\GITHUB\DistributedProgramming\lab8\TextListener\bin\Debug\netcoreapp2.2\TextListener.runtimeconfig.json
+E:\GITHUB\DistributedProgramming\lab8\TextListener\bin\Debug\netcoreapp2.2\TextListener.runtimeconfig.dev.json
+E:\GITHUB\DistributedProgramming\lab8\TextListener\bin\Debug\netcoreapp2.2\TextListener.dll
+E:\GITHUB\DistributedProgramming\lab8\TextListener\bin\Debug\netcoreapp2.2\TextListener.pdb
+E:\GITHUB\DistributedProgramming\lab8\TextListener\obj\Debug\netcoreapp2.2\TextListener.csprojAssemblyReference.cache
+E:\GITHUB\DistributedProgramming\lab8\TextListener\obj\Debug\netcoreapp2.2\TextListener.csproj.CoreCompileInputs.cache
+E:\GITHUB\DistributedProgramming\lab8\TextListener\obj\Debug\netcoreapp2.2\TextListener.AssemblyInfoInputs.cache
+E:\GITHUB\DistributedProgramming\lab8\TextListener\obj\Debug\netcoreapp2.2\TextListener.AssemblyInfo.cs
+E:\GITHUB\DistributedProgramming\lab8\TextListener\obj\Debug\netcoreapp2.2\TextListener.dll
+E:\GITHUB\DistributedProgramming\lab8\TextListener\obj\Debug\netcoreapp2.2\TextListener.pdb
 B:\study\distributed-programming\version_0.0.1\TextListener\TextListener.deps.json
 B:\study\distributed-programming\version_0.0.1\TextListener\TextListener.runtimeconfig.json
 B:\study\distributed-programming\version_0.0.1\TextListener\TextListener.runtimeconfig.dev.json

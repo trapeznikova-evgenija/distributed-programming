@@ -10,15 +10,19 @@ namespace TextListener
         {
             redis = ConnectionMultiplexer.Connect("127.0.0.1:6379");
             ISubscriber sub = redis.GetSubscriber();
+            //IDatabase db = redis.GetDatabase();
 
             sub.Subscribe("events", (channel, message) =>
            {
-               IDatabase mainDb = redis.GetDatabase(0);
-               string dbIndex = mainDb.StringGet((string)message);
-               IDatabase db = redis.GetDatabase(Convert.ToInt32(dbIndex));
-               string value = db.StringGet((string)message);
-               
-               Console.WriteLine($"{(string)message} {value} database number: {dbIndex}");
+               string[] messageData = message.ToString().Split('/');
+               if (messageData[0] == "TextCreated")
+               {
+                   IDatabase mainDb = redis.GetDatabase(0);
+                   string dbIndex = mainDb.StringGet((string)messageData[1]);
+                   IDatabase db = redis.GetDatabase(Convert.ToInt32(dbIndex));
+                   string value = db.StringGet((string)messageData[1]);
+                   Console.WriteLine($"{(string)messageData[1]} {value} database name: {dbIndex}");
+               }
            });
             Console.ReadLine();
         }

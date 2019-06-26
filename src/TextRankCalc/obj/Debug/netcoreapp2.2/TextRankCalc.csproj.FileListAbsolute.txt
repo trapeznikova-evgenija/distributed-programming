@@ -42,6 +42,17 @@ E:\GITHUB\DistributedProgramming\lab7\TextRankCalc\obj\Debug\netcoreapp2.2\TextR
 E:\GITHUB\DistributedProgramming\lab7\TextRankCalc\obj\Debug\netcoreapp2.2\TextRankCalc.AssemblyInfo.cs
 E:\GITHUB\DistributedProgramming\lab7\TextRankCalc\obj\Debug\netcoreapp2.2\TextRankCalc.dll
 E:\GITHUB\DistributedProgramming\lab7\TextRankCalc\obj\Debug\netcoreapp2.2\TextRankCalc.pdb
+E:\GITHUB\DistributedProgramming\lab8\TextRankCalc\bin\Debug\netcoreapp2.2\TextRankCalc.deps.json
+E:\GITHUB\DistributedProgramming\lab8\TextRankCalc\bin\Debug\netcoreapp2.2\TextRankCalc.runtimeconfig.json
+E:\GITHUB\DistributedProgramming\lab8\TextRankCalc\bin\Debug\netcoreapp2.2\TextRankCalc.runtimeconfig.dev.json
+E:\GITHUB\DistributedProgramming\lab8\TextRankCalc\bin\Debug\netcoreapp2.2\TextRankCalc.dll
+E:\GITHUB\DistributedProgramming\lab8\TextRankCalc\bin\Debug\netcoreapp2.2\TextRankCalc.pdb
+E:\GITHUB\DistributedProgramming\lab8\TextRankCalc\obj\Debug\netcoreapp2.2\TextRankCalc.csprojAssemblyReference.cache
+E:\GITHUB\DistributedProgramming\lab8\TextRankCalc\obj\Debug\netcoreapp2.2\TextRankCalc.csproj.CoreCompileInputs.cache
+E:\GITHUB\DistributedProgramming\lab8\TextRankCalc\obj\Debug\netcoreapp2.2\TextRankCalc.AssemblyInfoInputs.cache
+E:\GITHUB\DistributedProgramming\lab8\TextRankCalc\obj\Debug\netcoreapp2.2\TextRankCalc.AssemblyInfo.cs
+E:\GITHUB\DistributedProgramming\lab8\TextRankCalc\obj\Debug\netcoreapp2.2\TextRankCalc.dll
+E:\GITHUB\DistributedProgramming\lab8\TextRankCalc\obj\Debug\netcoreapp2.2\TextRankCalc.pdb
 B:\study\distributed-programming\version_0.0.1\TextRankCalc\TextRankCalc.deps.json
 B:\study\distributed-programming\version_0.0.1\TextRankCalc\TextRankCalc.runtimeconfig.json
 B:\study\distributed-programming\version_0.0.1\TextRankCalc\TextRankCalc.runtimeconfig.dev.json
