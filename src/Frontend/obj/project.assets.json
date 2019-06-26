@@ -5373,6 +5373,7 @@
       "path": "libuv/1.10.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "License.txt",
         "libuv.1.10.0.nupkg.sha512",
         "libuv.nuspec",
@@ -5411,6 +5412,7 @@
       "path": "microsoft.applicationinsights/2.4.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "lib/net40/Microsoft.ApplicationInsights.XML",
         "lib/net40/Microsoft.ApplicationInsights.dll",
         "lib/net45/Microsoft.ApplicationInsights.XML",
@@ -7975,6 +7977,7 @@
       "path": "microsoft.extensions.platformabstractions/1.1.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll",
         "lib/net451/Microsoft.Extensions.PlatformAbstractions.xml",
         "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll",
@@ -14218,7 +14221,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "0.0.1",
+    "version": "0.0.6",
     "restore": {
       "projectUniqueName": "B:\\study\\distributed-programming\\src\\Frontend\\Frontend.csproj",
       "projectName": "Frontend",

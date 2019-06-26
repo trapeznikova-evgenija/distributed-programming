@@ -5,19 +5,21 @@ namespace TextListener
 {
     class Program
     {
-        public static ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("localhost");
-        public static IDatabase tempDb = redis.GetDatabase();
-        //сабскрайбер который получает события
-        public static ISubscriber subscriber = tempDb.Multiplexer.GetSubscriber();
-
+        private static ConnectionMultiplexer redis;
         static void Main(string[] args)
         {
-            subscriber.Subscribe("events", (channel, message) => {
-                string idStr = (string)message;
-                string value = tempDb.StringGet(idStr);
-                Console.WriteLine(idStr + ": " + value);
-            });
+            redis = ConnectionMultiplexer.Connect("127.0.0.1:6379");
+            ISubscriber sub = redis.GetSubscriber();
 
+            sub.Subscribe("events", (channel, message) =>
+           {
+               IDatabase mainDb = redis.GetDatabase(0);
+               string dbIndex = mainDb.StringGet((string)message);
+               IDatabase db = redis.GetDatabase(Convert.ToInt32(dbIndex));
+               string value = db.StringGet((string)message);
+
+               Console.WriteLine($"{(string)message} {value} database number: {dbIndex}");
+           });
             Console.ReadLine();
         }
     }

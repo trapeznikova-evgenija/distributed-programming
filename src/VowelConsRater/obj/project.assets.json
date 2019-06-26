@@ -231,24 +231,23 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "Pipelines.Sockets.Unofficial/2.0.22": {
+      "Pipelines.Sockets.Unofficial/1.0.20": {
         "type": "package",
         "dependencies": {
           "System.Buffers": "4.4.0",
-          "System.IO.Pipelines": "4.5.1",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+          "System.IO.Pipelines": "4.5.1"
         },
         "compile": {
-          "lib/netcoreapp2.2/Pipelines.Sockets.Unofficial.dll": {}
+          "lib/netcoreapp2.1/Pipelines.Sockets.Unofficial.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp2.2/Pipelines.Sockets.Unofficial.dll": {}
+          "lib/netcoreapp2.1/Pipelines.Sockets.Unofficial.dll": {}
         }
       },
-      "StackExchange.Redis/2.0.601": {
+      "StackExchange.Redis/2.0.545": {
         "type": "package",
         "dependencies": {
-          "Pipelines.Sockets.Unofficial": "2.0.22",
+          "Pipelines.Sockets.Unofficial": "1.0.20",
           "System.Diagnostics.PerformanceCounter": "4.5.0",
           "System.IO.Pipelines": "4.5.1",
           "System.Threading.Channels": "4.5.0"
@@ -310,15 +309,6 @@
         },
         "runtime": {
           "lib/netcoreapp2.1/System.IO.Pipelines.dll": {}
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
       "System.Security.AccessControl/4.5.0": {
@@ -909,10 +899,10 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Pipelines.Sockets.Unofficial/2.0.22": {
-      "sha512": "Wi7Lm1W3dmSEH8hcPwBTMGX3BtNlEF2hPgmX2OCeTJ/2D2on38emU7DhFcMCsuGJC8GZ90N7N45qLpp150/ueA==",
+    "Pipelines.Sockets.Unofficial/1.0.20": {
+      "sha512": "Pv7AVIhifiIpbqBit/w/d9alzrFfI5ZlB/aTAeM/71ORW2kPnVNdxXX6r7b3/sHbd9szw9k0CDN7bve9BJPW3g==",
       "type": "package",
-      "path": "pipelines.sockets.unofficial/2.0.22",
+      "path": "pipelines.sockets.unofficial/1.0.20",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -922,20 +912,16 @@
         "lib/net472/Pipelines.Sockets.Unofficial.xml",
         "lib/netcoreapp2.1/Pipelines.Sockets.Unofficial.dll",
         "lib/netcoreapp2.1/Pipelines.Sockets.Unofficial.xml",
-        "lib/netcoreapp2.2/Pipelines.Sockets.Unofficial.dll",
-        "lib/netcoreapp2.2/Pipelines.Sockets.Unofficial.xml",
-        "lib/netcoreapp3.0/Pipelines.Sockets.Unofficial.dll",
-        "lib/netcoreapp3.0/Pipelines.Sockets.Unofficial.xml",
         "lib/netstandard2.0/Pipelines.Sockets.Unofficial.dll",
         "lib/netstandard2.0/Pipelines.Sockets.Unofficial.xml",
-        "pipelines.sockets.unofficial.2.0.22.nupkg.sha512",
+        "pipelines.sockets.unofficial.1.0.20.nupkg.sha512",
         "pipelines.sockets.unofficial.nuspec"
       ]
     },
-    "StackExchange.Redis/2.0.601": {
-      "sha512": "60fwic4a8NShLNss01eL3m+YmW+riTOA8tgubVrG2kwVUdWySrKvsQ+CveUKvGxDfeO/x78v1KM4WybFufhfMQ==",
+    "StackExchange.Redis/2.0.545": {
+      "sha512": "pYcxu2MYai8HJDfmhzX8oC261IuptR3JPv//0QINM1Rp9TZeeUlKskApyALhk261/X2b7G9yrECi1s2xCrSsVQ==",
       "type": "package",
-      "path": "stackexchange.redis/2.0.601",
+      "path": "stackexchange.redis/2.0.545",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -945,7 +931,7 @@
         "lib/net472/StackExchange.Redis.xml",
         "lib/netstandard2.0/StackExchange.Redis.dll",
         "lib/netstandard2.0/StackExchange.Redis.xml",
-        "stackexchange.redis.2.0.601.nupkg.sha512",
+        "stackexchange.redis.2.0.545.nupkg.sha512",
         "stackexchange.redis.nuspec"
       ]
     },
@@ -1047,31 +1033,6 @@
         "ref/netstandard1.3/System.IO.Pipelines.dll",
         "system.io.pipelines.4.5.1.nupkg.sha512",
         "system.io.pipelines.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
-      "sha512": "hMkdWxksypQlFXB7JamQegDscxEAQO4FHd/lw/zlSZU9dZgAij65xjCrXer183wvoNAzJic5zzjj2oc9/dloWg==",
-      "type": "package",
-      "path": "system.runtime.compilerservices.unsafe/4.5.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
-        "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -1248,7 +1209,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "Microsoft.NETCore.App >= 2.2.0",
-      "StackExchange.Redis >= 2.0.601"
+      "StackExchange.Redis >= 2.0.545"
     ]
   },
   "packageFolders": {
@@ -1256,7 +1217,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "0.0.1",
+    "version": "0.0.6",
     "restore": {
       "projectUniqueName": "B:\\study\\distributed-programming\\src\\VowelConsRater\\VowelConsRater.csproj",
       "projectName": "VowelConsRater",
@@ -1298,7 +1259,7 @@
           },
           "StackExchange.Redis": {
             "target": "Package",
-            "version": "[2.0.601, )"
+            "version": "[2.0.545, )"
           }
         },
         "imports": [

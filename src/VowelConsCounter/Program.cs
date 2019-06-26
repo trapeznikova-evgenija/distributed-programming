@@ -1,46 +1,57 @@
 ﻿using System;
-using StackExchange.Redis;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
+using StackExchange.Redis;
 
 namespace VowelConsCounter
 {
-   class Program
+    class Program
     {
-        const string VOWEL_COUNTER_JOBS_QUEUE = "vowel-cons-counter-jobs";
-        const string VOWEL_RATER_JOBS_QUEUE = "vowel-cons-rater-jobs";
-        const string CALCULATE_VOWEL_JOB_TASK_NAME = "CalculateVowelConsJob";
-        const string RATE_VOWEL_CONS_JOB_TASK_NAME = "RateVowelConsJob";
-        public static ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("localhost");
-        public static IDatabase tempDb = redis.GetDatabase();
-        public static ISubscriber subscriber = tempDb.Multiplexer.GetSubscriber();
 
+        const string TEXT_RANK_CHANNEL_NAME = "CalculateVowelConsJob";
+        const string TEXT_RANK_QUEUE_NAME = "vowel-cons-counter-jobs";
+        const string VOWEL_CONS_COUNTER_CHANNEL = "RateVowelConsJob";
+        const string VOWEL_CONS_COUNTER_QUEUE_NAME = "vowel-cons-rater-jobs";
         static void Main(string[] args)
         {
-           subscriber.Subscribe(CALCULATE_VOWEL_JOB_TASK_NAME, delegate
-           {
-               string contextId = tempDb.ListRightPop(VOWEL_COUNTER_JOBS_QUEUE);
-
-               while (contextId != null)
+            try
+            {
+                ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("127.0.0.1:6379");
+                ISubscriber sub = redis.GetSubscriber();
+                TextRank textRank = new TextRank();
+                sub.Subscribe(TEXT_RANK_CHANNEL_NAME, delegate
                 {
-                    string value = tempDb.StringGet(contextId);
+                    IDatabase redisDb = redis.GetDatabase(0);
+                    string message = redisDb.ListRightPop(TEXT_RANK_QUEUE_NAME);
 
-                    int vowelsAmount = Regex.Matches(value, @"[aeiouy]", RegexOptions.IgnoreCase).Count;
-                    int consonantsAmount = Regex.Matches(value, @"[bcdfghjklmnpqrstvwxz]", RegexOptions.IgnoreCase).Count;
-               
-                    SendMessage(tempDb, $"{contextId}/{vowelsAmount}/{consonantsAmount}");
-                    Console.WriteLine("Send message with RateVowelConsJob" + " " + contextId + " " + vowelsAmount + " " + consonantsAmount);
+                    while (message != null)
+                    {
+                        string[] messageData = message.Split('/');
+                        string id = messageData[0];
+                        string value = messageData[1];
 
-                    contextId = tempDb.ListRightPop(VOWEL_COUNTER_JOBS_QUEUE);
-                }
-            });
+                        int vowels = textRank.GetVowelsAmount(value);
+                        int consonants = textRank.GetConsonantAmount(value);
 
-           Console.ReadLine(); 
+                        SendMessage($"{id}/{vowels}/{consonants}", redisDb);
+
+                        Console.WriteLine($"{id}: {vowels} {consonants}");
+
+                        message = redisDb.ListRightPop(TEXT_RANK_QUEUE_NAME);
+                    }
+                });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            Console.ReadLine();
         }
-         private static void SendMessage(IDatabase tempDb, string vowelNumConsNum)
+
+        private static void SendMessage(string message, IDatabase db)
         {
-            tempDb.ListLeftPush(VOWEL_RATER_JOBS_QUEUE, vowelNumConsNum, flags: CommandFlags.FireAndForget);
-            tempDb.Multiplexer.GetSubscriber().Publish(RATE_VOWEL_CONS_JOB_TASK_NAME, "");
+            db.ListLeftPush(VOWEL_CONS_COUNTER_QUEUE_NAME, message, flags: CommandFlags.FireAndForget);
+            db.Multiplexer.GetSubscriber().Publish(VOWEL_CONS_COUNTER_CHANNEL, "");
         }
     }
+
 }

@@ -1,17 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Data input";
 }
+
 <div>
     <h2>Форма ввода</h2>
     <form method="post">
-        Data: <input name="data" type="text"/><br>
+        <div class="text-input">Data: <input name="data" type="text"/><br></div>
+        <p><select name="regionKind">
+            <option value=@RegionKind.Ru>RU</option>
+            <option value=@RegionKind.Eu>EU</option>
+            <option value=@RegionKind.Usa>USA</option>
+        </select></p>
         <input type="submit">
-        <div>
-            <select name="region">
-            <option>RU</option>
-            <option>EU</option>
-            <option>USA</option>
-        </select>
-        </div>
     </form>
 </div>

@@ -1,46 +1,50 @@
 ﻿using System;
 using StackExchange.Redis;
-using System.Collections.Generic;
 
 namespace VowelConsRater
 {
     class Program
     {
-        const string RATE_QUEUE_NAME = "vowel-cons-rater-jobs";
-        const string RATE_TASK_NAME = "RateVowelConsJob";
-
-        public static ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("localhost");
-        public static IDatabase tempDb = redis.GetDatabase();
-        public static ISubscriber subscriber = tempDb.Multiplexer.GetSubscriber();
+        const string VOWEL_CONS_COUNTER_CHANNEL = "RateVowelConsJob";
+        const string VOWEL_CONS_COUNTER_QUEUE_NAME = "vowel-cons-rater-jobs";
 
         static void Main(string[] args)
         {
-           subscriber.Subscribe(RATE_TASK_NAME, delegate
-           {
-               string message = tempDb.ListRightPop(RATE_QUEUE_NAME);
-               
-               while (message != null)
-               {
-                    string[] messageSplitArray = message.Split('/');
+            try
+            {
+                ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("localhost");
+                ISubscriber sub = redis.GetSubscriber();
+                sub.Subscribe(VOWEL_CONS_COUNTER_CHANNEL, delegate
+                {
+                    IDatabase redisDb = redis.GetDatabase(0);
+                    string message = redisDb.ListRightPop(VOWEL_CONS_COUNTER_QUEUE_NAME);
+                    while (message != null)
+                    {
+                        string[] messageData = message.Split('/');
+                        string id = messageData[0];
 
-                    string contextId = messageSplitArray[0];
-                    int vowelsAmount = Convert.ToInt16(messageSplitArray[1]);
-                    int consonantsAmount = Convert.ToInt16(messageSplitArray[2]);
+                        double vowels = Convert.ToDouble(messageData[1]);
+                        double consonants = Convert.ToDouble(messageData[2]);
 
-                    double rank = (double)vowelsAmount / consonantsAmount;
-                    string id = "rank_" + (string)contextId;
-                    tempDb.StringSet(id, rank);
-                    var dataValue = tempDb.StringGet(id);
-                    Console.WriteLine($"{dataValue}");
+                        double result = vowels / consonants;
+                        
+                        string rankId = "rank_" + id;
+                        string dbIndex = redisDb.StringGet(id);
+                        
+                        IDatabase bd = redis.GetDatabase(Convert.ToInt32(dbIndex));
+                        bd.StringSet(rankId, result);
 
-                    Console.WriteLine($"{id} : {rank}");
+                        Console.WriteLine($"{rankId} : {result} database number: {dbIndex}");
 
-                    message = tempDb.ListRightPop(RATE_QUEUE_NAME);
-                    subscriber.Publish("events", $"{id} : {rank}");
-               }
-           });
-
-            Console.ReadLine(); 
-        }       
+                        message = redisDb.ListRightPop(VOWEL_CONS_COUNTER_QUEUE_NAME);
+                    }
+                });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            Console.ReadLine();
+        }
     }
 }

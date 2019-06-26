@@ -1,5 +1,5 @@
 {
-  "FilePath": "b:\\study\\distributed-programming\\src\\Frontend\\Frontend.csproj",
+  "FilePath": "e:\\GITHUB\\DistributedProgramming\\lab6\\Frontend\\Frontend.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-2.1",
     "LanguageVersion": "2.1",
@@ -2769,6 +2769,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Home\\Error.cshtml",
+      "TargetPath": "Views\\Home\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Home\\Upload.cshtml",
       "TargetPath": "Views\\Home\\Upload.cshtml",
       "FileKind": "mvc"
@@ -2784,6 +2794,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Shared\\_CookieConsentPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
@@ -2791,6 +2806,11 @@
     {
       "FilePath": "Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     }
   ]

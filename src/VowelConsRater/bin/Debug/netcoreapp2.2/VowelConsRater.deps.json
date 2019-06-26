@@ -1,14 +1,14 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "3a20bd80363ce4587aaf2c4f7ebb17c4a3435c5b"
+    "signature": "6e7955cdde25282e83d200b6cb7497e2e321cddc"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.2": {
       "VowelConsRater/1.0.0": {
         "dependencies": {
-          "StackExchange.Redis": "2.0.601"
+          "StackExchange.Redis": "2.0.545"
         },
         "runtime": {
           "VowelConsRater.dll": {}
@@ -30,22 +30,21 @@
           }
         }
       },
-      "Pipelines.Sockets.Unofficial/2.0.22": {
+      "Pipelines.Sockets.Unofficial/1.0.20": {
         "dependencies": {
           "System.Buffers": "4.4.0",
-          "System.IO.Pipelines": "4.5.1",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+          "System.IO.Pipelines": "4.5.1"
         },
         "runtime": {
-          "lib/netcoreapp2.2/Pipelines.Sockets.Unofficial.dll": {
+          "lib/netcoreapp2.1/Pipelines.Sockets.Unofficial.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "2.0.22.26858"
+            "fileVersion": "1.0.20.63508"
           }
         }
       },
-      "StackExchange.Redis/2.0.601": {
+      "StackExchange.Redis/2.0.545": {
         "dependencies": {
-          "Pipelines.Sockets.Unofficial": "2.0.22",
+          "Pipelines.Sockets.Unofficial": "1.0.20",
           "System.Diagnostics.PerformanceCounter": "4.5.0",
           "System.IO.Pipelines": "4.5.1",
           "System.Threading.Channels": "4.5.0"
@@ -53,7 +52,7 @@
         "runtime": {
           "lib/netstandard2.0/StackExchange.Redis.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.601.3402"
+            "fileVersion": "2.0.545.8602"
           }
         }
       },
@@ -96,14 +95,6 @@
           "lib/netcoreapp2.1/System.IO.Pipelines.dll": {
             "assemblyVersion": "4.0.0.0",
             "fileVersion": "4.6.26814.2"
-          }
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
-        "runtime": {
-          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
-            "assemblyVersion": "4.0.4.1",
-            "fileVersion": "4.6.26919.2"
           }
         }
       },
@@ -180,19 +171,19 @@
       "path": "microsoft.win32.registry/4.5.0",
       "hashPath": "microsoft.win32.registry.4.5.0.nupkg.sha512"
     },
-    "Pipelines.Sockets.Unofficial/2.0.22": {
+    "Pipelines.Sockets.Unofficial/1.0.20": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Wi7Lm1W3dmSEH8hcPwBTMGX3BtNlEF2hPgmX2OCeTJ/2D2on38emU7DhFcMCsuGJC8GZ90N7N45qLpp150/ueA==",
-      "path": "pipelines.sockets.unofficial/2.0.22",
-      "hashPath": "pipelines.sockets.unofficial.2.0.22.nupkg.sha512"
+      "sha512": "sha512-Pv7AVIhifiIpbqBit/w/d9alzrFfI5ZlB/aTAeM/71ORW2kPnVNdxXX6r7b3/sHbd9szw9k0CDN7bve9BJPW3g==",
+      "path": "pipelines.sockets.unofficial/1.0.20",
+      "hashPath": "pipelines.sockets.unofficial.1.0.20.nupkg.sha512"
     },
-    "StackExchange.Redis/2.0.601": {
+    "StackExchange.Redis/2.0.545": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-60fwic4a8NShLNss01eL3m+YmW+riTOA8tgubVrG2kwVUdWySrKvsQ+CveUKvGxDfeO/x78v1KM4WybFufhfMQ==",
-      "path": "stackexchange.redis/2.0.601",
-      "hashPath": "stackexchange.redis.2.0.601.nupkg.sha512"
+      "sha512": "sha512-pYcxu2MYai8HJDfmhzX8oC261IuptR3JPv//0QINM1Rp9TZeeUlKskApyALhk261/X2b7G9yrECi1s2xCrSsVQ==",
+      "path": "stackexchange.redis/2.0.545",
+      "hashPath": "stackexchange.redis.2.0.545.nupkg.sha512"
     },
     "System.Buffers/4.4.0": {
       "type": "package",
@@ -221,13 +212,6 @@
       "sha512": "sha512-M/LkZMcZ+EPyBSd3vhOBIY78NZzFs4/WR7c26ZIAY0opJLxF9x+KYUp+i6ibzrsi4kTy/sY5hI+4a8kJ3Q6wDQ==",
       "path": "system.io.pipelines/4.5.1",
       "hashPath": "system.io.pipelines.4.5.1.nupkg.sha512"
-    },
-    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-hMkdWxksypQlFXB7JamQegDscxEAQO4FHd/lw/zlSZU9dZgAij65xjCrXer183wvoNAzJic5zzjj2oc9/dloWg==",
-      "path": "system.runtime.compilerservices.unsafe/4.5.2",
-      "hashPath": "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
     },
     "System.Security.AccessControl/4.5.0": {
       "type": "package",

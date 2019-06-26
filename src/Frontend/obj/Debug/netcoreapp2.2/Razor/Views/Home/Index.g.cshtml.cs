@@ -23,8 +23,13 @@ using Frontend.Models;
 
 #line default
 #line hidden
+#line 3 "B:\study\distributed-programming\src\Frontend\Views\_ViewImports.cshtml"
+using Frontend.Kinds;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ffda8a5a922508bc2f1a946354d36a5ecd662ae8", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"da9a7313b162216ba4fd0de62e6951289e87a78f", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"633495606965eb23f6ebd6935db9e62ba2474588", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

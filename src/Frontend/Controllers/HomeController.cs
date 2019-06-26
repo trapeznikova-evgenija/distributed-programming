@@ -2,16 +2,27 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
+using Newtonsoft.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Frontend.Models;
 using System.Net.Http;
-using System.Net.Http.Headers;
+using System.IO;
+using Frontend.Services;
+using Frontend.Kinds;
 
 namespace Frontend.Controllers
 {
     public class HomeController : Controller
     {
+        ConnectionService _connectionService;
+
+        public HomeController()
+        {
+            _connectionService = new ConnectionService("http://127.0.0.1:5000/");
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -23,41 +34,39 @@ namespace Frontend.Controllers
             return View();
         }
 
-        [HttpGet]
-        public async Task<IActionResult> TextDetails(string id)
+        [HttpPost]
+        public async Task<IActionResult> Upload(string data, RegionKind regionKind)
         {
-            HttpClient httpClient = new HttpClient();
-            HttpResponseMessage response = await httpClient.GetAsync("http://127.0.0.1:5000/api/values/" + id);
-
-            response.EnsureSuccessStatusCode();
-            string responseBody = await response.Content.ReadAsStringAsync();
-
-            ViewData["TextDetails"] = responseBody;
-
-            return View();
+            if (!String.IsNullOrEmpty(data))
+            {
+                string id = null;
+                //TODO: send data in POST request to backend and read returned id value from response
+                id = await _connectionService.PostRequestToBackend(new TextDto(data, regionKind), "api/values");
+                return RedirectToAction("GetTextDetails", new { id = id });
+            }
+            else
+            {
+                return View("Error", "Ошибка ввода данных");
+            }
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Upload(string data)
+        [Route("text-details")]
+        [HttpGet]
+        public async Task<IActionResult> GetTextDetails(string id)
         {
-            HttpClient restClient = new HttpClient();
-            
-            restClient.BaseAddress = new Uri("http://localhost:5000/");
-            restClient.DefaultRequestHeaders.Clear();
-           
-            FormUrlEncodedContent content = new FormUrlEncodedContent(new[] {
-                new KeyValuePair<string, string>("value", data)
-            });
+            string rank = await _connectionService.PostRequestToBackend(id, $"api/values/text-rank");
 
-            HttpResponseMessage response = await restClient.PostAsync("/api/values", content);
-            string id = await response.Content.ReadAsStringAsync();
+            if (!String.IsNullOrEmpty(rank))
+            {
+                return View("TextDetails", rank);
+            }
 
-            return new RedirectResult("http://localhost:5001/Home/TextDetails/" + id);
+            return View("Error", "Ошибка ввода данных");
         }
 
         public IActionResult Error()
         {
-                return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

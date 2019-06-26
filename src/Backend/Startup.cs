@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Backend.Services;
+using StackExchange.Redis;
 
 namespace Backend
 {
@@ -24,6 +26,7 @@ namespace Backend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddSingleton<ConnectionMultiplexer>(ConnectionMultiplexer.Connect("127.0.0.1:6379"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
