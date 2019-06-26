@@ -10,6 +10,7 @@ using Backend.Models;
 using System.Net.Http;
 using System.Threading;
 using Backend.Kinds;
+using Backend.Helpers;
 
 namespace Backend.Controllers
 {
@@ -17,10 +18,12 @@ namespace Backend.Controllers
     public class ValuesController : Controller
     {
         private RedisService _redisService;
+        private RedisHelper _redisHelper;
 
         public ValuesController(ConnectionMultiplexer redis)
         {
             _redisService = new RedisService(redis);
+            _redisHelper = new RedisHelper();
         }
 
         // GET api/values/<id>
@@ -28,7 +31,7 @@ namespace Backend.Controllers
         public string Get(string id)
         {
             string value = null;
-            _redisService.GetDataFromDb((int) GetDbNumberById(id), id);
+            _redisService.GetDataFromDb((int) _redisService.GetDbNumberById(id), id);
             return value;
         }
 
@@ -37,9 +40,9 @@ namespace Backend.Controllers
         public string Post([FromBody]TextDto value)
         {
             var id = Guid.NewGuid().ToString();
-            _redisService.SetDataToDb(0, new RedisData(id, GetDbNumberByRegionKind(value.RegionKind).ToString()));
-            _redisService.SetDataToDb((int)GetDbNumberByRegionKind(value.RegionKind), new RedisData(id, value.Value));
-            _redisService.SendMessage((int)GetDbNumberByRegionKind(value.RegionKind), "events", new RedisData()
+            _redisService.SetDataToDb(0, new RedisData(id, _redisHelper.GetDbNumberByRegionKind(value.RegionKind).ToString()));
+            _redisService.SetDataToDb((int) _redisHelper.GetDbNumberByRegionKind(value.RegionKind), new RedisData(id, value.Value));
+            _redisService.SendMessage((int) _redisHelper.GetDbNumberByRegionKind(value.RegionKind), "events", new RedisData()
             {
                 Id = id,
                 Value = value.Value
@@ -52,9 +55,9 @@ namespace Backend.Controllers
         public string CalculateTextRank([FromBody]string id)
         {
             string rank = null;
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 5; i++)
             {
-                rank = _redisService.GetValueById((int) GetDbNumberById(id), $"rank_{id}");
+                rank = _redisService.GetValueById((int) _redisService.GetDbNumberById(id), $"rank_{id}");
                 if (rank != null)
                 {
                     break;
@@ -67,32 +70,16 @@ namespace Backend.Controllers
             return rank;
         }
 
-        private int? GetDbNumberByRegionKind(RegionKind regionKind)
+        [Route("statistics")]
+        [HttpGet]
+        public StatisitcDto GetStatistics()
         {
-            switch (regionKind)
+            return new StatisitcDto()
             {
-                case RegionKind.Ru:
-                {
-                    return 1;
-                }
-                case RegionKind.Eu:
-                {
-                    return 2;
-                }
-                case RegionKind.Usa:
-                {
-                    return 3;
-                }
-                default:
-                {
-                    return null;
-                }
-            }
-        }
-
-        private int GetDbNumberById(string id)
-        {
-            return Convert.ToInt32(_redisService.GetDataFromDb(0, id));
+                textNum = _redisService.GetDataFromDb(0, "textNum_"),
+                highRankPart = _redisService.GetDataFromDb(0, "highRankPart_"),
+                avgRank = _redisService.GetDataFromDb(0, "avgRankPrefix_")
+            };
         }
     }
 }

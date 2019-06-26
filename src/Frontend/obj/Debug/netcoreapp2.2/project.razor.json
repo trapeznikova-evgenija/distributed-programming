@@ -1,5 +1,5 @@
 {
-  "FilePath": "e:\\GITHUB\\DistributedProgramming\\lab6\\Frontend\\Frontend.csproj",
+  "FilePath": "e:\\GITHUB\\DistributedProgramming\\lab7\\Frontend\\Frontend.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-2.1",
     "LanguageVersion": "2.1",
@@ -2806,6 +2806,11 @@
     {
       "FilePath": "Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views\\Statistics\\Statistics.cshtml",
+      "TargetPath": "Views\\Statistics\\Statistics.cshtml",
       "FileKind": "mvc"
     },
     {

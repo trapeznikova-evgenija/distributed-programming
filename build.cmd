@@ -8,6 +8,7 @@ set textListenerFolderName=TextListener
 set textRankCalcFolderName=TextRankCalc
 set vowelConsCounterFolderName=VowelConsCounter
 set vowelConsRaterFolderName=VowelConsRater
+set TextStatisticsFolderName=TextStatistics
 
 
 if %1 == "" goto write_version
@@ -41,6 +42,7 @@ dotnet build "src/%textListenerFolderName%" -o "../../%buildFolderDir%/%textList
 dotnet build "src/%textRankCalcFolderName%" -o "../../%buildFolderDir%/%textRankCalcFolderName%"
 dotnet build "src/%vowelConsCounterFolderName%" -o "../../%buildFolderDir%/%vowelConsCounterFolderName%"
 dotnet build "src/%vowelConsRaterFolderName%" -o "../../%buildFolderDir%/%vowelConsRaterFolderName%"
+dotnet build "src/%TextStatisticsFolderName%" -o "../../%buildFolderDir%/%TextStatisticsFolderName%"
 exit /b 0
 
 :run_file_not_exist

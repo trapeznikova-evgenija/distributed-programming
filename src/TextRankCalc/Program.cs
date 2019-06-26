@@ -17,9 +17,11 @@ namespace TextRankCalc
             {
                 IDatabase mainDb = redis.GetDatabase(0);
                 string dbIndex = mainDb.StringGet((string)message);
+
                 IDatabase redisDb = redis.GetDatabase(Convert.ToInt32(dbIndex));
                 string value = redisDb.StringGet((string)message);
                 SendMessage($"{message}/{value}", redis.GetDatabase(0));
+
                 Console.WriteLine($"{message}: {value} database number: {dbIndex}");
             });
             Console.ReadLine();
@@ -27,9 +29,7 @@ namespace TextRankCalc
 
         private static void SendMessage(string message, IDatabase redisDb)
         {
-            // put message to queue
             redisDb.ListLeftPush(QUEUE_NAME, message, flags: CommandFlags.FireAndForget);
-            // and notify consumers
             redisDb.Multiplexer.GetSubscriber().Publish(CHANNEL_NAME, "");
         }
     }
