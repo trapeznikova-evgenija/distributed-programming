@@ -47,8 +47,3 @@ B:\study\distributed-programming\version_0.0.2\VowelConsCounter\VowelConsCounter
 B:\study\distributed-programming\version_0.0.2\VowelConsCounter\VowelConsCounter.runtimeconfig.dev.json
 B:\study\distributed-programming\version_0.0.2\VowelConsCounter\VowelConsCounter.dll
 B:\study\distributed-programming\version_0.0.2\VowelConsCounter\VowelConsCounter.pdb
-B:\study\distributed-programming\version_0.0.3\VowelConsCounter\VowelConsCounter.deps.json
-B:\study\distributed-programming\version_0.0.3\VowelConsCounter\VowelConsCounter.runtimeconfig.json
-B:\study\distributed-programming\version_0.0.3\VowelConsCounter\VowelConsCounter.runtimeconfig.dev.json
-B:\study\distributed-programming\version_0.0.3\VowelConsCounter\VowelConsCounter.dll
-B:\study\distributed-programming\version_0.0.3\VowelConsCounter\VowelConsCounter.pdb

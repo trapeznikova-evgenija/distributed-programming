@@ -47,8 +47,3 @@ B:\study\distributed-programming\version_0.0.2\VowelConsRater\VowelConsRater.run
 B:\study\distributed-programming\version_0.0.2\VowelConsRater\VowelConsRater.runtimeconfig.dev.json
 B:\study\distributed-programming\version_0.0.2\VowelConsRater\VowelConsRater.dll
 B:\study\distributed-programming\version_0.0.2\VowelConsRater\VowelConsRater.pdb
-B:\study\distributed-programming\version_0.0.3\VowelConsRater\VowelConsRater.deps.json
-B:\study\distributed-programming\version_0.0.3\VowelConsRater\VowelConsRater.runtimeconfig.json
-B:\study\distributed-programming\version_0.0.3\VowelConsRater\VowelConsRater.runtimeconfig.dev.json
-B:\study\distributed-programming\version_0.0.3\VowelConsRater\VowelConsRater.dll
-B:\study\distributed-programming\version_0.0.3\VowelConsRater\VowelConsRater.pdb

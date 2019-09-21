@@ -69,8 +69,3 @@ B:\study\distributed-programming\version_0.0.2\TextListener\TextListener.runtime
 B:\study\distributed-programming\version_0.0.2\TextListener\TextListener.runtimeconfig.dev.json
 B:\study\distributed-programming\version_0.0.2\TextListener\TextListener.dll
 B:\study\distributed-programming\version_0.0.2\TextListener\TextListener.pdb
-B:\study\distributed-programming\version_0.0.3\TextListener\TextListener.deps.json
-B:\study\distributed-programming\version_0.0.3\TextListener\TextListener.runtimeconfig.json
-B:\study\distributed-programming\version_0.0.3\TextListener\TextListener.runtimeconfig.dev.json
-B:\study\distributed-programming\version_0.0.3\TextListener\TextListener.dll
-B:\study\distributed-programming\version_0.0.3\TextListener\TextListener.pdb

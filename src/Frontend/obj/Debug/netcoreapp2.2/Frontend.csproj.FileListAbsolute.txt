@@ -293,10 +293,3 @@ B:\study\distributed-programming\version_0.0.2\Frontend\Frontend.dll
 B:\study\distributed-programming\version_0.0.2\Frontend\Frontend.pdb
 B:\study\distributed-programming\version_0.0.2\Frontend\Frontend.Views.dll
 B:\study\distributed-programming\version_0.0.2\Frontend\Frontend.Views.pdb
-B:\study\distributed-programming\version_0.0.3\Frontend\Frontend.deps.json
-B:\study\distributed-programming\version_0.0.3\Frontend\Frontend.runtimeconfig.json
-B:\study\distributed-programming\version_0.0.3\Frontend\Frontend.runtimeconfig.dev.json
-B:\study\distributed-programming\version_0.0.3\Frontend\Frontend.dll
-B:\study\distributed-programming\version_0.0.3\Frontend\Frontend.pdb
-B:\study\distributed-programming\version_0.0.3\Frontend\Frontend.Views.dll
-B:\study\distributed-programming\version_0.0.3\Frontend\Frontend.Views.pdb

@@ -58,8 +58,3 @@ B:\study\distributed-programming\version_0.0.2\TextRankCalc\TextRankCalc.runtime
 B:\study\distributed-programming\version_0.0.2\TextRankCalc\TextRankCalc.runtimeconfig.dev.json
 B:\study\distributed-programming\version_0.0.2\TextRankCalc\TextRankCalc.dll
 B:\study\distributed-programming\version_0.0.2\TextRankCalc\TextRankCalc.pdb
-B:\study\distributed-programming\version_0.0.3\TextRankCalc\TextRankCalc.deps.json
-B:\study\distributed-programming\version_0.0.3\TextRankCalc\TextRankCalc.runtimeconfig.json
-B:\study\distributed-programming\version_0.0.3\TextRankCalc\TextRankCalc.runtimeconfig.dev.json
-B:\study\distributed-programming\version_0.0.3\TextRankCalc\TextRankCalc.dll
-B:\study\distributed-programming\version_0.0.3\TextRankCalc\TextRankCalc.pdb

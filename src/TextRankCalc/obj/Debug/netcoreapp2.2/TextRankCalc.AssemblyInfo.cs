@@ -9,8 +9,8 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("TextRankCalc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("0.0.3.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.0.3")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("0.0.2.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.0.2")]
 [assembly: System.Reflection.AssemblyProductAttribute("TextRankCalc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TextRankCalc")]
-[assembly: System.Reflection.AssemblyVersionAttribute("0.0.3.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("0.0.2.0")]
