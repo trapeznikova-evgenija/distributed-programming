@@ -52,7 +52,7 @@ namespace Backend.Controllers
         public string CalculateTextRank([FromBody]string id)
         {
             string rank = null;
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 5; i++)
             {
                 rank = _redisService.GetValueById((int) GetDbNumberById(id), $"rank_{id}");
                 if (rank != null)

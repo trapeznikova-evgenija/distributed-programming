@@ -13,6 +13,7 @@ namespace VowelConsCounter
         const string VOWEL_CONS_COUNTER_QUEUE_NAME = "vowel-cons-rater-jobs";
         static void Main(string[] args)
         {
+            Console.WriteLine("VowelConsCounter was started");
             try
             {
                 ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("127.0.0.1:6379");
@@ -22,20 +23,16 @@ namespace VowelConsCounter
                 {
                     IDatabase redisDb = redis.GetDatabase(0);
                     string message = redisDb.ListRightPop(TEXT_RANK_QUEUE_NAME);
-
                     while (message != null)
                     {
                         string[] messageData = message.Split('/');
                         string id = messageData[0];
                         string value = messageData[1];
-
                         int vowels = textRank.GetVowelsAmount(value);
                         int consonants = textRank.GetConsonantAmount(value);
 
                         SendMessage($"{id}/{vowels}/{consonants}", redisDb);
-
                         Console.WriteLine($"{id}: {vowels} {consonants}");
-
                         message = redisDb.ListRightPop(TEXT_RANK_QUEUE_NAME);
                     }
                 });
@@ -49,7 +46,9 @@ namespace VowelConsCounter
 
         private static void SendMessage(string message, IDatabase db)
         {
+            // put message to queue
             db.ListLeftPush(VOWEL_CONS_COUNTER_QUEUE_NAME, message, flags: CommandFlags.FireAndForget);
+            // and notify consumers
             db.Multiplexer.GetSubscriber().Publish(VOWEL_CONS_COUNTER_CHANNEL, "");
         }
     }

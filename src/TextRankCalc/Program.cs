@@ -10,8 +10,10 @@ namespace TextRankCalc
         const string QUEUE_NAME = "vowel-cons-counter-jobs";
         static void Main(string[] args)
         {
+            Console.WriteLine("TextRank was started");
             redis = ConnectionMultiplexer.Connect("127.0.0.1:6379");
             ISubscriber sub = redis.GetSubscriber();
+           // IDatabase redisDb = redis.GetDatabase();
 
             sub.Subscribe("events", (channel, message) =>
             {
@@ -20,7 +22,7 @@ namespace TextRankCalc
                 IDatabase redisDb = redis.GetDatabase(Convert.ToInt32(dbIndex));
                 string value = redisDb.StringGet((string)message);
                 SendMessage($"{message}/{value}", redis.GetDatabase(0));
-                Console.WriteLine($"{message}: {value} database number: {dbIndex}");
+                Console.WriteLine($"{message}: {value} db:{dbIndex}");
             });
             Console.ReadLine();
         }

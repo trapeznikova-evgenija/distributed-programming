@@ -9,8 +9,8 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("VowelConsRater")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("0.0.6.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.0.6")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("0.0.2.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.0.2")]
 [assembly: System.Reflection.AssemblyProductAttribute("VowelConsRater")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VowelConsRater")]
-[assembly: System.Reflection.AssemblyVersionAttribute("0.0.6.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("0.0.2.0")]

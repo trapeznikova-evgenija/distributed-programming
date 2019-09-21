@@ -10,6 +10,7 @@ namespace VowelConsRater
 
         static void Main(string[] args)
         {
+            Console.WriteLine("VowelConsRater was started");
             try
             {
                 ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("localhost");
@@ -22,20 +23,14 @@ namespace VowelConsRater
                     {
                         string[] messageData = message.Split('/');
                         string id = messageData[0];
-
                         double vowels = Convert.ToDouble(messageData[1]);
                         double consonants = Convert.ToDouble(messageData[2]);
-
                         double result = vowels / consonants;
-                        
                         string rankId = "rank_" + id;
                         string dbIndex = redisDb.StringGet(id);
-                        
                         IDatabase bd = redis.GetDatabase(Convert.ToInt32(dbIndex));
                         bd.StringSet(rankId, result);
-
-                        Console.WriteLine($"{rankId} : {result} database number: {dbIndex}");
-
+                        Console.WriteLine($"{rankId} : {result} db:{dbIndex}");
                         message = redisDb.ListRightPop(VOWEL_CONS_COUNTER_QUEUE_NAME);
                     }
                 });
