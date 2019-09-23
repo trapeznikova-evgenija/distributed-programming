@@ -21,7 +21,7 @@ namespace TextListener
                    string dbIndex = mainDb.StringGet((string)messageData[1]);
                    IDatabase db = redis.GetDatabase(Convert.ToInt32(dbIndex));
                    string value = db.StringGet((string)messageData[1]);
-                   Console.WriteLine($"{(string)messageData[1]} {value} database name: {dbIndex}");
+                   Console.WriteLine($"{(string)messageData[1]} {value} db:{dbIndex}");
                }
            });
             Console.ReadLine();

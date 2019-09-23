@@ -388,7 +388,7 @@
           "lib/netcoreapp2.1/System.Threading.Channels.dll": {}
         }
       },
-      "RedisService/0.0.3": {
+      "RedisService/0.0.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1218,7 +1218,7 @@
         "version.txt"
       ]
     },
-    "RedisService/0.0.3": {
+    "RedisService/0.0.2": {
       "type": "project",
       "path": "../WebLib/Service/RedisService/RedisService.csproj",
       "msbuildProject": "../WebLib/Service/RedisService/RedisService.csproj"
@@ -1227,7 +1227,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "Microsoft.NETCore.App >= 2.2.0",
-      "RedisService >= 0.0.3",
+      "RedisService >= 0.0.2",
       "StackExchange.Redis >= 2.0.545"
     ]
   },
@@ -1236,7 +1236,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "0.0.3",
+    "version": "0.0.2",
     "restore": {
       "projectUniqueName": "B:\\study\\distributed-programming\\src\\VowelConsRater\\VowelConsRater.csproj",
       "projectName": "VowelConsRater",

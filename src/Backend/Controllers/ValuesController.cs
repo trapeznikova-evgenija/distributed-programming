@@ -19,6 +19,7 @@ namespace Backend.Controllers
     {
         private RedisService _redisService;
         private RedisHelper _redisHelper;
+        private static string _limitIsOver = null;
 
         public ValuesController(ConnectionMultiplexer redis)
         {
