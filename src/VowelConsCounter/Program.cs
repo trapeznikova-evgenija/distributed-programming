@@ -13,7 +13,7 @@ namespace VowelConsCounter
         const string VOWEL_CONS_COUNTER_QUEUE_NAME = "vowel-cons-rater-jobs";
         static void Main(string[] args)
         {
-            Console.WriteLine("VowelConsCounter was started");
+            Console.WriteLine("VowelConsCounter STARTED");
             try
             {
                 ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("127.0.0.1:6379");

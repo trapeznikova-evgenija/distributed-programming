@@ -12,7 +12,7 @@ namespace VowelConsRater
 
         static void Main(string[] args)
         {
-            Console.WriteLine("VowelConsRater was started");
+            Console.WriteLine("VowelConsRater STARTED");
             try
             {
                 ConnectionMultiplexer redis = ConnectionMultiplexer.Connect( "127.0.0.1:6379" );

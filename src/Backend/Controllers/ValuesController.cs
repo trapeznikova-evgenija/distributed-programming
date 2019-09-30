@@ -19,7 +19,7 @@ namespace Backend.Controllers
     {
         private RedisService _redisService;
         private RedisHelper _redisHelper;
-        private static string _limitIsOver = null;
+        //private static string _limitIsOver = null;
 
         public ValuesController(ConnectionMultiplexer redis)
         {
@@ -41,6 +41,7 @@ namespace Backend.Controllers
         public string Post([FromBody]TextDto value)
         {
             var id = Guid.NewGuid().ToString();
+            
             _redisService.SetDataToDb(0, new RedisData(id, _redisHelper.GetDbNumberByRegionKind(value.RegionKind).ToString()));
             _redisService.SetDataToDb((int)_redisHelper.GetDbNumberByRegionKind(value.RegionKind), new RedisData(id, value.Value));
             _redisService.SendMessage((int)_redisHelper.GetDbNumberByRegionKind(value.RegionKind), "events", new RedisData()
@@ -57,6 +58,7 @@ namespace Backend.Controllers
         {
             string rank = null;
             string limitStatus = _redisService.GetValueById(0, $"LimitIsExceeded");
+
             if (limitStatus != "false")
             {
                 for (int i = 0; i < 10; i++)

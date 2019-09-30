@@ -10,7 +10,7 @@ namespace TextRankCalc
         const string QUEUE_NAME = "vowel-cons-counter-jobs";
         static void Main( string[] args )
         {
-            Console.WriteLine( "TextRank was started" );
+            Console.WriteLine( "TextRank STARTED" );
             redis = ConnectionMultiplexer.Connect( "127.0.0.1:6379" );
             ISubscriber sub = redis.GetSubscriber();
 
